@@ -1,0 +1,210 @@
+Ce fichier toast js permet d'envoyé un message a l'utilisateur l'indiquant que le nom entrée n'est pas celui a entrée
+..
+il permet de verifier ce que l'utilisateur rentrer dans la barre input avant d'etre enregistré en base de donnée
+
+les toast sont des box de dialogues dans lesquels des messages apparaissent lorsque l'utilisateur interagit avec le formulaire.
+
+<script>
+jquery(document). ready(function(){
+1..on recupere l'id de <small></small:
+$('#name').keyup(function()
+	{
+		VERIFICATION DE LA SAISI DU NOM
+		var name = $('name').val();
+	-->si le prenom contien des lettres donc c 'est ok egalement si c est vide
+		if(/^[a-zA-Z]+$/.test(name) || name == '')
+		{
+		 $('#name').removeClass('is-invalid');
+	
+		  $('#erreur-name').text('');
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#name').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  $('#erreur-name').text('le nom contient un caractere invalide');
+
+		}
+
+	
+		
+	});
+
+
+$('#SURNAME').keyup(function()
+	{
+		VERIFICATION DE LA SAISI DU PRENOM
+		var name = $('name').val();
+	-->si le prenom contien des lettres donc c 'est ok egalement si c est vide
+		if(/^[a-zA-Z]+$/.test(name) || name == '')
+		{
+		 $('#SURNAME').removeClass('is-invalid');
+	
+		  $('#erreur-nom').text('');
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#SURNAME').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  $('#erreur-SURNAME').text('le prenom contient un caractere invalide');
+
+		}
+
+
+		
+	});
+
+$('#email-inscription').keyup(function()
+	{
+		VERIFICATION DE LA SAISI De l'email
+		var name = $('email-inscription').val();
+	-->si le mail a été bien saisi: l'email peut contenir des lettre et des chiffres
+   		if(/^[a-z0-9]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(email) || email == '')->expression reguliere	
+		{
+		 $('#email-inscription').removeClass('is-invalid');
+	
+		  $('#erreur-email').text('');
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#email-inscription').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  $('#erreur-email').text('l'email contient un caractere invalide');
+
+		}
+
+
+		//verification de la saisi du mot de passe 
+		$('#password-inscription').keyup(function()
+		{
+			var password  = $('#password-inscription').val();
+			var taille = password.length;
+
+			if(taille > 6 || password =='') alors pas de soucis le mot de passe est accepté
+			{
+			   $('password-inscription').removeClass ('is-invalid');
+			   $('#erreur-password').text('');	
+			}
+			else
+			{
+			   $('password-inscription').addClass ('is-invalid');
+			    $('#erreur-password').text('Le mot de passe doit contenir au moins 8 caracteres' );
+			}
+ 		});
+
+
+
+		// a l'inscription lutilisateur doit rentrer tout les informations d'inscription obligatoirement.
+		$(('#inscription').click(function()
+
+		{		// cette fonction nous permet de verifier si tous les champs a remplir ne sont pas vide. s'il sont vide un message d'erreur apparaitra
+			var name = $('#name').val();
+			var surname = $('#surname').val();
+			var birthday = $('#birthday ).val();
+			var genre = $('#genre').val();
+			var adresse = $('#adresse').val();
+			var  email= $('#email-inscription').val();
+			var  password= $('#password-inscription').val();
+
+			if(name !='') //alors pas de soucis le mot de passe est accepté
+			{
+			  if(surname != '')
+				{
+				   if(adresse != '')->si l'adresse est différent de vide
+					{
+					    if(email !='')
+						{
+						  if(password !='')
+							{
+						  	    var name = $('name').val();
+	-->si le prenom contien des lettres donc c 'est ok egalement si c est vide
+		if(/^[a-zA-Z]+$/.test(name) || name == '')
+		{
+		 					  	    var name = $('name').val();
+	-->si le prenom contien des lettres donc c 'est ok egalement si c est vide
+		if(/^[a-zA-Z]+$/.test(name) || name == '')
+		{
+		 if(/^[a-z0-9]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(email) || email == '')->expression reguliere	
+		{
+		 $('#email-inscription').removeClass('is-invalid');
+	
+		  $('#erreur-email').text('');
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#email-inscription').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  erreur('l'email contient un caractere invalide');
+
+		}
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#prenom').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  erreur('le nom contient un caractere invalide');
+
+		}
+
+		}
+	-->sinon on affiche des eerreurs
+		else
+		{
+		  $('#name').addClass('is-invalid');
+	-->on recuppere l'id dans le small name pour pour generer un texte message d erreur
+		  erreur('le nom contient un caractere invalide');
+
+		}
+							{
+							 else  
+							} 
+							  ('Le mot de passe  ne doit pas etre vide');	
+							   $('#password-inscription).addClass('is-invalid');
+							}
+						}	
+					  	else
+						{
+						  ('L\'email ne doit pas etre vide');	
+						$('#email-inscription).addClass('is-invalid');	
+						}
+					}
+					else
+					{
+					('L\'adresse ne doit pas etre vide');	
+					$('#adresse).addClass('is-invalid');
+					}					
+					
+				}
+				else
+				{
+				(Le prenom ne doit pas etre vide);	
+				$('#surname).addClass('is-invalid');
+				}	
+			}
+			else
+			{
+			  erreur('Le nom ne doit pas etre vide!')
+			  $('#name).addClass('is-invalid');
+			}	
+		});
+//message toastr d'erreur est appelé das la function en haut
+		 function erreur(element)
+			{ voir dans tostr.init.js}
+		
+	});
+
+
+});
+
+
+</script>

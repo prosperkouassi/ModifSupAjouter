@@ -1,0 +1,38 @@
+nav img {
+    max-width: 110px;
+}
+.text-logo a b {
+    color: black;
+    padding:  12px 2px;
+}
+.menu .nav-item a {
+    text-decoration: none;
+    color: black;
+}
+.mr-auto .nav-item a{
+    color: black;
+}
+
+.error{
+    height: 50px;
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 50px;
+    border:1px solid #FF3333;
+    color:#FF3333;
+    background-color: #FF8787;
+    border-radius: 10px;
+    font-size: 10px;
+}
+.success{
+    height: 50px;
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 50px;
+    color: #45ba30;
+    background-color: #95ff82;
+    border-radius: 10px;
+}
+
